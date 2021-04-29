@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private Button decButton;
     private Button incButton;
 
+    private final static String KEY_NAME = "MainActivity.name";
+    private String name = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 display();
             }
         });
+
+        if (savedInstanceState != null){
+            name = savedInstanceState.getString(KEY_NAME);
+        }
     }
 
     @Override
